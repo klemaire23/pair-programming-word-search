@@ -35,4 +35,36 @@ describe("#wordSearch()", function() {
 
     assert.isTrue(result);
   });
+
+  it("should return true if the word is present vertically", function() {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'E', 'I', 'N', 'F', 'E', 'L', 'E'],
+      ['Y', 'F', 'C', 'F', 'Q', 'U', 'A', 'A'],
+      ['H', 'M', 'J', 'T', 'E', 'V', 'R', 'D'],
+      ['W', 'H', 'C', 'S', 'Y', 'E', 'R', 'L'],
+      ['B', 'F', 'R', 'E', 'N', 'E', 'Y', 'B'],
+      ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'LEAD')
+
+    assert.isTrue(result);
+  });
+
+  it("should return false if the array is empty", function() {
+    const result = wordSearch([
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+    ], 'LEAD')
+
+    assert.isFalse(result);
+  });
 });
